@@ -1,24 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Layout, Menu } from "antd";
+import Carousel from "./components/Carousel";
+const { Header, Content, Footer } = Layout;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <Layout style={{ height: "100vh" }}>
+        <Header
+          style={{
+            display: "flex",
+            alignItems: "center",
+            color: "white",
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <div>Shahid</div>
+          <Menu
+            items={[{ label: "Login", key: "home" }]}
+            theme="dark"
+            mode="horizontal"
+            defaultSelectedKeys={["2"]}
+            style={{
+              flex: 1,
+              minWidth: 0,
+            }}
+          />
+        </Header>
+        <Content
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
+          <Carousel></Carousel>
+          {/* <ShowCardSkeleton /> */}
+        </Content>
+        <Footer
+          style={{
+            textAlign: "center",
+          }}
+        >
+          Footer
+        </Footer>
+      </Layout>
+    </>
   );
 }
 
