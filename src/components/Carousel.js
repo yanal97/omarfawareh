@@ -34,7 +34,7 @@ const Carousel = () => {
     <div>
       <Swiper
         allowTouchMove={false}
-        slidesPerView={5}
+        slidesPerView={4}
         navigation={true}
         modules={[Navigation]}
         className={classes.swipe}
@@ -56,6 +56,7 @@ const Carousel = () => {
                 display: "flex",
                 alignItems: "center",
                 alignContent: "center",
+                padding: "2rem",
               }}
             >
               <ShowCard show={show} />
@@ -69,6 +70,7 @@ const Carousel = () => {
                 display: "flex",
                 alignItems: "center",
                 alignContent: "center",
+                padding: "2rem",
               }}
             >
               <ShowCardSkeleton />
