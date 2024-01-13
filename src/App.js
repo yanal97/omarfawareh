@@ -31,17 +31,19 @@ function App() {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
+            backgroundColor: "rgb(0, 21, 41)",
           }}
         >
-          <Carousel></Carousel>
-          {/* <ShowCardSkeleton /> */}
+          <Carousel />
         </Content>
         <Footer
           style={{
+            color: "white",
             textAlign: "center",
+            backgroundColor: "rgb(0, 21, 41)",
           }}
         >
-          Footer
+          MBC Group 2023 © جميع الحقوق محفوظة لمجموعة
         </Footer>
       </Layout>
     </>

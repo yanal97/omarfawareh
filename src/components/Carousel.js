@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import ShowCard from "./ShowCard";
-import { Navigation } from "swiper/modules";
 import axios from "axios";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import ShowCard from "./ShowCard";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -13,6 +13,7 @@ const Carousel = () => {
   const [shows, setShows] = useState([]);
   const [isFetched, setIsFetched] = useState(false);
   const skeletonArray = Array.from({ length: 12 }, (_, index) => index);
+
   useEffect(() => {
     async function fetchShows() {
       try {
@@ -40,7 +41,8 @@ const Carousel = () => {
         spaceBetween={"0"}
         style={{
           // border: "blue solid 1px",
-          height: "400px",
+          backgroundColor: "rgb(0, 21, 41)",
+          height: "350px",
           display: "flex",
           alignItems: "center",
           alignContent: "center",
@@ -73,8 +75,6 @@ const Carousel = () => {
             </SwiperSlide>
           ))}
       </Swiper>
-
-      {/* {!isFetched && <h1>LOADING CONTENT PLEASE WAIT</h1>} */}
     </div>
   );
 };
