@@ -34,11 +34,22 @@ const Carousel = () => {
     <div>
       <Swiper
         allowTouchMove={false}
-        slidesPerView={4}
+        slidesPerView={1}
         navigation={true}
         modules={[Navigation]}
         className={classes.swipe}
         spaceBetween={"0"}
+        breakpoints={{
+          768: {
+            slidesPerView: 2,
+          },
+          1000: {
+            slidesPerView: 3,
+          },
+          1500: {
+            slidesPerView: 4,
+          },
+        }}
         style={{
           // border: "red solid 1px",
           backgroundColor: "rgb(0, 21, 41)",

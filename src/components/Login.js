@@ -15,9 +15,10 @@ const Login = () => {
   }
   return (
     <div className={classes.login}>
+      {/* {console.log(email === undefined)} */}
       <div className={classes.card}>
         <h1>Login</h1>
-        <div style={{ width: "50%" }}>
+        <div className={classes.input}>
           <Input
             placeholder="Email"
             htmlType="email"

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import ShowCard from "./ShowCard";
-// import ShowCardSkeleton from "./ShowCardSkeleton";
+import classes from "./ShowPage.module.css";
+import ShowCardSkeleton from "./ShowCardSkeleton";
 
 const ShowPage = () => {
   const [shows, setShows] = useState([]);
@@ -25,19 +26,9 @@ const ShowPage = () => {
     fetchShows();
   }, []);
   return (
-    <div
-      style={{
-        // border: "red solid 1px",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        alignContent: "center",
-      }}
-    >
-      {/* <div style={{ width: "25%" }}> */}
+    <div className={classes.container}>
       {isFetched && <ShowCard hoverable={false} show={shows[index]} />}
-      {/* {!isFetched && <ShowCardSkeleton />}
-      </div> */}
+      {!isFetched && <ShowCardSkeleton />}
     </div>
   );
 };
