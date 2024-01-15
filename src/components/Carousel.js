@@ -56,6 +56,7 @@ const Carousel = () => {
                 display: "flex",
                 alignItems: "center",
                 alignContent: "center",
+                padding: "2rem",
               }}
             >
               <ShowCard show={show} index={index} hoverable={true} />
