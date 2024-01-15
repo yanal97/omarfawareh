@@ -70,6 +70,7 @@ const Carousel = () => {
                 display: "flex",
                 alignItems: "center",
                 alignContent: "center",
+                padding: "2rem",
                 height: "100%",
               }}
             >
