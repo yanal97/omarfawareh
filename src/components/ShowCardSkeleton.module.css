@@ -1,18 +1,19 @@
 .skeleton {
   /* border: red solid 1px; */
-  max-width: 350px;
+  /* max-width: 350px; */
   height: 100%;
   width: 100%;
   margin: 1rem;
   border-radius: 5px;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .skeleton .square {
   /* border: red solid 1px; */
+  width: 90%;
   height: 200px;
-  width: 350px;
   border-radius: 5px;
   background: rgba(130, 130, 130, 0.2);
   background: linear-gradient(

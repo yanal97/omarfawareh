@@ -3,12 +3,12 @@ import axios from "axios";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import ShowCard from "./ShowCard";
+import ShowCardSkeleton from "./ShowCardSkeleton";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import classes from "./Carousel.module.css";
 
-import ShowCardSkeleton from "./ShowCardSkeleton";
 const Carousel = () => {
   const [shows, setShows] = useState([]);
   const [isFetched, setIsFetched] = useState(false);
@@ -34,13 +34,13 @@ const Carousel = () => {
     <div>
       <Swiper
         allowTouchMove={false}
-        slidesPerView={5}
+        slidesPerView={4}
         navigation={true}
         modules={[Navigation]}
         className={classes.swipe}
         spaceBetween={"0"}
         style={{
-          // border: "blue solid 1px",
+          // border: "red solid 1px",
           backgroundColor: "rgb(0, 21, 41)",
           height: "350px",
           display: "flex",
@@ -49,7 +49,7 @@ const Carousel = () => {
         }}
       >
         {isFetched &&
-          shows.map((show) => (
+          shows.map((show, index) => (
             <SwiperSlide
               key={show.item.id}
               style={{
@@ -58,7 +58,7 @@ const Carousel = () => {
                 alignContent: "center",
               }}
             >
-              <ShowCard show={show} />
+              <ShowCard show={show} index={index} hoverable={true} />
             </SwiperSlide>
           ))}
         {!isFetched &&
@@ -69,6 +69,7 @@ const Carousel = () => {
                 display: "flex",
                 alignItems: "center",
                 alignContent: "center",
+                height: "100%",
               }}
             >
               <ShowCardSkeleton />

@@ -1,9 +1,10 @@
 import "./App.css";
 import { Layout, Menu } from "antd";
-import Carousel from "./components/Carousel";
+import { Outlet, useNavigate } from "react-router-dom";
 const { Header, Content, Footer } = Layout;
 
 function App() {
+  const navigate = useNavigate();
   return (
     <>
       <Layout style={{ height: "100vh" }}>
@@ -14,16 +15,18 @@ function App() {
             color: "white",
           }}
         >
-          <div>Shahid</div>
+          <div style={{ marginRight: "1rem" }}>Shahid</div>
           <Menu
-            items={[{ label: "Login", key: "home" }]}
+            onClick={({ key }) => {
+              navigate(key);
+            }}
+            items={[
+              { label: "Home", key: "/" },
+              { label: "Login", key: "/login" },
+            ]}
             theme="dark"
             mode="horizontal"
             defaultSelectedKeys={["2"]}
-            style={{
-              flex: 1,
-              minWidth: 0,
-            }}
           />
         </Header>
         <Content
@@ -34,7 +37,7 @@ function App() {
             backgroundColor: "rgb(0, 21, 41)",
           }}
         >
-          <Carousel />
+          <Outlet />
         </Content>
         <Footer
           style={{

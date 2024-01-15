@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import classes from "./ShowCard.module.css";
 import ShowContent from "./ShowContent";
-const ShowCard = ({ show }) => {
+import { Link } from "react-router-dom";
+const ShowCard = ({ show, index, hoverable }) => {
   const [isHovering, setIsHovering] = useState(null);
 
   return (
@@ -10,12 +11,17 @@ const ShowCard = ({ show }) => {
       onMouseOver={() => setIsHovering(show.item.id)}
       onMouseLeave={() => setIsHovering(null)}
     >
-      <img
-        alt="example"
-        src={show.item.image.thumbnailImage}
-        className={classes.image}
-      />
-      {isHovering === show.item.id && (
+      <Link
+        to={{ pathname: `/show/:${show.item.id}/:${index}` }}
+        style={{ padding: "0", margin: "0" }}
+      >
+        <img
+          alt="example"
+          src={show.item.image.thumbnailImage}
+          className={classes.image}
+        />
+      </Link>
+      {(isHovering === show.item.id || hoverable === false) && (
         <div class={classes.content}>
           <h2>
             <b>{show.item.title}</b>
