@@ -23,9 +23,11 @@ const ShowCard = ({ show, index, hoverable }) => {
       </Link>
       {(isHovering === show.item.id || hoverable === false) && (
         <div class={classes.content}>
-          <h2>
-            <b>{show.item.title}</b>
-          </h2>
+          <a href={`/show/:${show.item.id}/:${index}`}>
+            <h2>
+              <b>{show.item.title}</b>
+            </h2>
+          </a>
           <ShowContent genres={show.item.genres} />
         </div>
       )}
