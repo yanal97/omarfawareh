@@ -17,7 +17,7 @@ const Login = () => {
   function ValidateInput(params) {
     var validRegex =
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    if (email.match(validRegex)) {
+    if (email && email.match(validRegex)) {
       if (email === loginEmail && password === loginPassword) {
         localStorage.setItem("user", email);
         message.success("Welcome " + email);
