@@ -12,7 +12,7 @@ const ShowCard = ({ show, index, hoverable }) => {
       onMouseLeave={() => setIsHovering(null)}
     >
       <Link
-        to={{ pathname: `/show/:${show.item.id}/:${index}` }}
+        to={{ pathname: `/show/${show.item.id}/${index}` }}
         style={{ padding: "0", margin: "0" }}
       >
         <img
@@ -23,7 +23,7 @@ const ShowCard = ({ show, index, hoverable }) => {
       </Link>
       {(isHovering === show.item.id || hoverable === false) && (
         <div class={classes.content}>
-          <a href={`/show/:${show.item.id}/:${index}`}>
+          <a href={`/show/${show.item.id}/${index}`}>
             <h2>
               <b>{show.item.title}</b>
             </h2>

@@ -9,7 +9,7 @@ const ShowPage = () => {
   const [shows, setShows] = useState([]);
   const [isFetched, setIsFetched] = useState(false);
   const params = useParams();
-  const index = params.index.split(":")[1];
+  const index = params.index;
   useEffect(() => {
     async function fetchShows() {
       try {
@@ -27,7 +27,9 @@ const ShowPage = () => {
   }, []);
   return (
     <div className={classes.container}>
-      {isFetched && <ShowCard hoverable={false} show={shows[index]} />}
+      {isFetched && (
+        <ShowCard hoverable={false} show={shows[index]} index={index} />
+      )}
       {!isFetched && <ShowCardSkeleton />}
     </div>
   );
