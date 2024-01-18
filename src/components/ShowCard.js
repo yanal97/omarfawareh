@@ -11,10 +11,7 @@ const ShowCard = ({ show, index, hoverable }) => {
       onMouseOver={() => setIsHovering(show.item.id)}
       onMouseLeave={() => setIsHovering(null)}
     >
-      <Link
-        to={{ pathname: `/show/${show.item.id}/${index}` }}
-        style={{ padding: "0", margin: "0" }}
-      >
+      <Link to={{ pathname: `/show/${show.item.id}/${index}` }}>
         <img
           alt="example"
           src={show.item.image.thumbnailImage}

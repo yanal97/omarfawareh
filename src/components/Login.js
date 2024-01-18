@@ -17,7 +17,7 @@ const Login = () => {
   function ValidateInput(params) {
     var validRegex =
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    if (email && email.match(validRegex)) {
+    if (email && email.match(validRegex) && password) {
       if (email === loginEmail && password === loginPassword) {
         localStorage.setItem("user", email);
         message.success("Welcome " + email);
@@ -26,7 +26,7 @@ const Login = () => {
         message.warning("Unsuccessful Login");
       }
     } else {
-      message.warning("Invalid Email");
+      message.warning("Invalid Inputs");
     }
   }
   return (

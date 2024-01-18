@@ -1,7 +1,13 @@
-/* .swiper {
-  border: "blue solid 1px";
-  height: "600px" !important;
-  display: "flex";
-  align-items: "center";
-  align-content: "center";
-} */
+.swiper {
+  background-color: rgb(0, 21, 41);
+  height: 350px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+.slide {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  padding: 2rem;
+}

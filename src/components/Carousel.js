@@ -37,7 +37,7 @@ const Carousel = () => {
         slidesPerView={1}
         navigation={true}
         modules={[Navigation]}
-        className={classes.swipe}
+        className={classes.swiper}
         spaceBetween={"0"}
         breakpoints={{
           768: {
@@ -50,41 +50,16 @@ const Carousel = () => {
             slidesPerView: 4,
           },
         }}
-        style={{
-          // border: "red solid 1px",
-          backgroundColor: "rgb(0, 21, 41)",
-          height: "350px",
-          display: "flex",
-          alignItems: "center",
-          alignContent: "center",
-        }}
       >
         {isFetched &&
           shows.map((show, index) => (
-            <SwiperSlide
-              key={show.item.id}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                alignContent: "center",
-                padding: "2rem",
-              }}
-            >
+            <SwiperSlide className={classes.slide} key={show.item.id}>
               <ShowCard show={show} index={index} hoverable={true} />
             </SwiperSlide>
           ))}
         {!isFetched &&
           skeletonArray.map((index) => (
-            <SwiperSlide
-              key={index}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                alignContent: "center",
-                padding: "2rem",
-                height: "100%",
-              }}
-            >
+            <SwiperSlide key={index} className={classes.slide}>
               <ShowCardSkeleton />
             </SwiperSlide>
           ))}
