@@ -16,8 +16,12 @@ const ShowCard = ({ show, index, hoverable }) => {
           alt="example"
           src={show.item.image.thumbnailImage}
           className={classes.image}
+          loading="lazy"
         />
       </Link>
+      {hoverable && (
+        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+      )}
       {(isHovering === show.item.id || hoverable === false) && (
         <div class={classes.content}>
           <a href={`/show/${show.item.id}/${index}`}>
