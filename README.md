@@ -1,6 +1,4 @@
-# Show Carousel Web APP 
-
-made in React.js
+# Show Carousel React.js Web APP 
 
 ## Steps to Run
 
